@@ -969,3 +969,72 @@ main {
     padding: 4px 8px;
     font-size: 12px;
 }
+
+/* Jegyzet részletek */
+.note-detail-content {
+    padding: 20px 0;
+}
+
+.note-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.note-info h1 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+    font-size: 28px;
+}
+
+.note-excerpt {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.note-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color: #888;
+    flex-wrap: wrap;
+}
+
+.note-content {
+    margin-bottom: 30px;
+}
+
+.content-box {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .note-info h1 {
+        font-size: 24px;
+    }
+    
+    .note-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .header-actions .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
