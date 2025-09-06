@@ -1,0 +1,971 @@
+/* Alap stílusok */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar { 
+    background: #2c3e50; 
+    color: white; 
+    padding: 15px; 
+    display: flex; 
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a { 
+    color: white; 
+    text-decoration: none; 
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #34495e;
+}
+
+main { 
+    padding: 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kártya stílusok */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h1, .card-header h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+/* Naptár konténer */
+.calendar-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+/* Naptár rács */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: #e9ecef;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    padding: 12px 8px;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+/* Naptár napjai */
+.calendar-day {
+    min-height: 120px;
+    background-color: white;
+    padding: 8px;
+    position: relative;
+    border: 1px solid #e9ecef;
+}
+
+.calendar-day.empty {
+    background-color: #f8f9fa;
+}
+
+.calendar-day:hover {
+    background-color: #f1f8ff;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.calendar-day.today .day-number {
+    background-color: #3498db;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Események */
+.event {
+    font-size: 11px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #3498db;
+    color: white;
+}
+
+.event-more {
+    font-size: 10px;
+    color: #6c757d;
+    margin-top: 5px;
+    cursor: pointer;
+    font-style: italic;
+}
+
+/* Projektek stílusok */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.project-description {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #888;
+}
+
+.subproject-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Lista stílusok */
+.collection-list, .note-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collection-item, .note-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.collection-item:hover, .note-item:hover {
+    background-color: #f8f9fa;
+}
+
+.collection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.note-excerpt {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Gombok */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(7, minmax(100px, 1fr));
+    }
+    
+    .calendar-day {
+        min-height: 80px;
+        padding: 4px;
+    }
+    
+    .event {
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+    
+    .weekday {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .calendar-grid {
+        grid-template-columns: repeat(7, minmax(80px, 1fr));
+    }
+    
+    .calendar-day {
+        min-height: 70px;
+    }
+    
+    .day-number {
+        font-size: 12px;
+    }
+    
+    .event {
+        display: none;
+    }
+    
+    .event-more {
+        display: none;
+    }
+}
+
+/* Segédosztályok */
+.text-center {
+    text-align: center;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Form stílusok */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Modal stílusok */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Form stílusok a modalhoz */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.form-checkbox input[type="checkbox"] {
+    margin: 0;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Reszponzív design a modalhoz */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* Alert stílusok */
+.alert {
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* Esemény törlés gomb */
+.event-delete {
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.event-delete:hover {
+    color: #ff0000;
+}
+
+/* Törlés modal */
+.btn-danger {
+    background-color: #ef4444;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* Note actions */
+.note-actions {
+    margin-top: 10px;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Projekt kártya stílusok */
+.project-card {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-actions {
+    opacity: 1;
+}
+
+.project-actions .btn {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* Empty state */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.empty-state p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Note lista stílusok */
+.note-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-item:hover {
+    background-color: #f8f9fa;
+}
+
+.text-sm {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Projekt részletek */
+.breadcrumb {
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.project-info {
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.project-info h1 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.project-description {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Section stílusok */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Almappa grid */
+.subproject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.subproject-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.subproject-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.subproject-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.subproject-description {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Jegyzet lista */
+.notes-list {
+    display: grid;
+    gap: 15px;
+}
+
+.note-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 3px solid #3498db;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.note-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.note-title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.pinned-badge {
+    background-color: #fef3c7;
+    color: #92400e;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.note-excerpt {
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.note-meta {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Card footer */
+.card-footer {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .header-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .header-actions .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .subproject-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Formázási eszköztár */
+.formatting-toolbar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.formatting-toolbar button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.formatting-toolbar button:hover {
+    background-color: #f8f9fa;
+}
+
+/* Gomb stílusok */
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #3498db;
+    color: #3498db;
+}
+
+.btn-outline:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Modal stílusok */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .formatting-toolbar {
+        flex-wrap: wrap;
+    }
+}
+
+/* Fájl kezelés stílusok */
+.file-actions {
+    margin-bottom: 15px;
+}
+
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.file-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.file-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.file-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.file-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-type-icon {
+    font-size: 32px;
+    text-align: center;
+}
+
+.file-info {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.file-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.file-actions {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.file-actions .btn {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+/* Előnézet modal */
+#previewContent .loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .files-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .file-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .file-info {
+        text-align: center;
+    }
+    
+    .file-meta {
+        justify-content: center;
+    }
+}
+
+/* Jegyzet törlés gomb */
+.note-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.note-card:hover .note-actions {
+    opacity: 1;
+}
+
+.note-actions .btn {
+    padding: 4px 8px;
+    font-size: 12px;
+}
